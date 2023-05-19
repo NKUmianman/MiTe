@@ -1,2 +1,2 @@
 # MiTe
-An easy  admin system for Business  
+An E-Business system for our Web course
