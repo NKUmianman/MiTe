@@ -1,0 +1,384 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link href="{% static "plugins/bootstrap-5.3.0/css/bootstrap.min.css"%}" rel="stylesheet" type="text/css">
+    <link href="{% static "css/explore.css"%}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static "bottom/bottom.css"%}">
+    <link rel="stylesheet" href="{% static "nav/nav.css"%}">
+    <link rel="stylesheet" href="{% static "vendor/fontawesome-free-5.12.0-web/css/all.min.css"%}">
+</head>
+
+<body>
+<<!--navigation bars-->
+<nav class="site-top-nav">
+    <div class="logo"><a style="font-size: xx-large"><strong>MiTe</strong></a></div>
+    <ul class="site-menu">
+        <li><a href="/login/">登录 </a></li>
+        <li><a href="/home/">主页 </a></li>
+        <li><a href="/explore/">商品 </a></li>
+        <li><a href="/user/">用户 </a></li>
+        <li><a href="/admin/home/">后台 </a></li>
+        <li><a href="#" class="ui-btn ui-btn-info"><strong>Get Started</strong></a></li>
+    </ul>
+    <i class="nav-toggle fa fa-bars"></i>
+    </nav>
+
+<div id="side-nav" class="side-nav">
+    <div class="side-nav-menu perfect-scroll">
+        <div class="text-logo"><a href="#">
+            <h3>MiTe</h3>
+        </a></div>
+        <div class="site-user">
+            <div class="site-user-img"><img src="../static/img/用户头像.jpg" alt=""><span class="online"></span></div>
+            <a href="#" class="user-name"><strong>小新</strong></a>
+        </div>
+        <ul class="menu">
+            <li><a href="/login/">登录 </a></li>
+            <li><a href="/home/">主页</a></li>
+            <li><a href="/explore/">商品</a></li>
+            <li><a href="/user/">用户</a></li>
+            <li><a href="/admin/home/">后台</a></li>
+        </ul>
+        <div class="logout"><a href="#">退出登录</a></div>
+    </div>
+</div>
+
+<div class="head">
+  <div id="left">
+    <br>
+    </div>
+    <div class="g-heading">
+        <h3 id="title"></h3>
+    </div>
+</div>
+
+<div id="body" style="display:flex;">
+  <div style="flex:1; max-width: 24%;">
+    <div class="SideBar">
+        <!--下拉框-->
+        <!--选择栏-->
+      <div class="card">
+          <div class="card-header">商品种类</div>
+          <div class="card-body">
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">数码</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">服饰</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+                  <label class="form-check-label" for="flexRadioDefault3">食品</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
+                  <label class="form-check-label" for="flexRadioDefault4">图书</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5" checked>
+                  <label class="form-check-label" for="flexRadioDefault5">百货</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6" checked>
+                  <label class="form-check-label" for="flexRadioDefault6">美妆</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault7" checked>
+                  <label class="form-check-label" for="flexRadioDefault7">家装</label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault8" checked>
+                  <label class="form-check-label" for="flexRadioDefault8">其他</label>
+              </div>
+          </div>
+      </div>
+        <br>
+        <div class="card">
+            <div class="card-header">筛选</div>
+            <div class="card-body">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheck2.1">
+                    <label class="form-check-label" for="flexCheck2.1">新品</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheck2.2" checked >
+                    <label class="form-check-label" for="flexCheck2.2">促销</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheck2.3" checked>
+                    <label class="form-check-label" for="flexCheck2.3">有货</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheck2.4" checked>
+                    <label class="form-check-label" for="flexCheck2.4">包邮</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-header">价格区间</div>
+            <div class="card-body">
+                <p>您选择的价格区间为：<span id="priceRange"></span> 元</p>
+                <div>
+                    <label for="minPrice">最低价格：</label>
+                    <input type="range" id="minPrice" min="0" max="2000" value="0">
+                </div>
+                <div style="display: block; margin-top: 10px;">
+                    <label for="maxPrice">最高价格：</label>
+                    <input type="range" id="maxPrice" min="0" max="2000" value="2000">
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+    <div style="flex:1; max-width: 2%;"></div>
+    <div style="flex:1; max-width: 74%;">
+        <div class='Cards'>
+            <div class="card">
+                <div id=“changeHeight” class="card-body d-flex justify-content-between">
+                    <div class="d-flex align-items-center ">
+                        <span>我们为您找到了 n 项商品！</span>
+                    </div>
+                    <div class="select-wrapper">
+                        <span>请选择排序方式：</span>
+                        <select class="form-select form-select-sm" aria-label=".form-select-lg example" style="max-width: 200px;">
+                            <option selected>综合</option>
+                            <option value="1">销量</option>
+                            <option value="2">价格升序</option>
+                            <option value="3">价格降序</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <img src="{% static "img/goods1.jpg" %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Goods name</h5>
+                            <p class="card-text">$300.00</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/explore/detail/" class="btn btn-outline-secondary">&nbsp;&nbsp;Details&nbsp;&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <img src="{% static "img/goods2.jpg" %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Goods name</h5>
+                            <p class="card-text">$300.00</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/explore/detail/" class="btn btn-outline-secondary">&nbsp;&nbsp;Details&nbsp;&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100  shadow" >
+                        <img src="{% static "img/goods3.jpg" %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Goods name</h5>
+                            <p class="card-text">$300.00</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/explore/detail/" class="btn btn-outline-secondary">&nbsp;&nbsp;Details&nbsp;&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <img src="{% static "img/goods4.jpg" %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Goods name</h5>
+                            <p class="card-text">$300.00</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/explore/detail/" class="btn btn-outline-secondary">&nbsp;&nbsp;Details&nbsp;&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <img src="{% static "img/goods5.jpg" %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Goods name</h5>
+                            <p class="card-text">$300.00</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/explore/detail/" class="btn btn-outline-secondary">&nbsp;&nbsp;Details&nbsp;&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <img src="{% static "img/goods1.jpg" %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Goods name</h5>
+                            <p class="card-text">$300.00</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/explore/detail/" class="btn btn-outline-secondary">&nbsp;&nbsp;Details&nbsp;&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <img src="{% static "img/goods2.jpg" %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Goods name</h5>
+                            <p class="card-text">$300.00</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/explore/detail/" class="btn btn-outline-secondary">&nbsp;&nbsp;Details&nbsp;&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <img src="{% static "img/goods3.jpg" %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Goods name</h5>
+                            <p class="card-text">$300.00</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/explore/detail/" class="btn btn-outline-secondary">&nbsp;&nbsp;Details&nbsp;&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow">
+                        <img src="{% static "img/goods4.jpg" %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Goods name</h5>
+                            <p class="card-text">$300.00</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="/explore/detail/" class="btn btn-outline-secondary">&nbsp;&nbsp;Details&nbsp;&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <!--页码跳转-->
+            <nav>
+                <ul class="pagination pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<footer class="footer">
+    <div class="footer-item">
+        <strong>获得联系</strong>
+        <a href="#"><i class="fa fa-angle-right"></i>获取支持</a>
+        <a href="#"><i class="fa fa-angle-right"></i>广告宣传</a>
+        <a href="#"><i class="fa fa-angle-right"></i>社区服务</a>
+        <a href="#"><i class="fa fa-angle-right"></i>项目研发</a>
+        <a href="#"><i class="fa fa-angle-right"></i>联系我们</a>
+    </div>
+    <div class="footer-item">
+        <strong>遇到问题？</strong>
+        <a href="#"><i class="fa fa-angle-right"></i>帮助</a>
+        <a href="#"><i class="fa fa-angle-right"></i>交流</a>
+        <a href="#"><i class="fa fa-angle-right"></i>现场支持</a>
+    </div>
+    <div class="footer-item">
+        <strong>关注我们</strong>
+        <a href="#"><i class="fa fa-angle-right"></i>Tik Tok</a>
+        <a href="#"><i class="fa fa-angle-right"></i>Bilibili</a>
+        <a href="#"><i class="fa fa-angle-right"></i>Facebook</a>
+        <a href="#"><i class="fa fa-angle-right"></i>Youtube</a>
+        <a href="#"><i class="fa fa-angle-right"></i>Microblog</a>
+    </div>
+    <div class="footer-item">
+        <strong>主要链接</strong>
+        <a href="#"><i class="fa fa-angle-right"></i>主页</a>
+        <a href="#"><i class="fa fa-angle-right"></i>产品</a>
+        <a href="#"><i class="fa fa-angle-right"></i>服务</a>
+        <a href="#"><i class="fa fa-angle-right"></i>关于</a>
+    </div>
+</footer>
+
+<div class="bottom-strip">
+    <div class="copyright"><i class="fa fa-copyright"></i><span>MiTe. All Rights Reserved</span></div>
+</div>
+<!--end Footer-->
+
+<script>
+const minPrice = document.getElementById('minPrice');
+const maxPrice = document.getElementById('maxPrice');
+const priceRange = document.getElementById('priceRange');
+minPrice.addEventListener('input', () => {
+    if (parseInt(minPrice.value) > parseInt(maxPrice.value)) {
+        maxPrice.value = minPrice.value;
+    }
+    priceRange.textContent = `${minPrice.value} - ${maxPrice.value}`;
+});
+maxPrice.addEventListener('input', () => {
+    if (parseInt(maxPrice.value) < parseInt(minPrice.value)) {
+        minPrice.value = maxPrice.value;
+    }
+    priceRange.textContent = `${minPrice.value} - ${maxPrice.value}`;
+});
+
+// 定义需要打字的文本
+var text = "Get What You Want";
+// 获取 h1 元素
+var titleEle = document.getElementById('title');
+
+// 定义变量记录截取的长度和时间间隔
+var len = 0;
+var interval = 100; // 每 100 毫秒更新一次
+var finished = false;
+
+// 设置定时器
+var timer = setInterval(function() {
+    // 判断是否已经打完了所有字符
+    if (len >= text.length) {
+        finished = true;
+        clearInterval(timer); // 停止定时器的运行
+        return;
+    }
+    // 截取字符串一部分，并赋值给 h1 元素
+    titleEle.innerHTML = text.substring(0, len+1);
+    len++;
+},interval);
+
+// 在打字完成后将文本固定在页面上
+setTimeout(function() {
+    if (finished) {
+        titleEle.innerHTML = text;
+    }
+}, interval * text.length);
+</script>
+</body>
+<script src="{% static "plugins/bootstrap-5.3.0/js/bootstrap.bundle.min.js"%}" type="text/javascript"></script>
+<script src="{% static "vendor/js/jquery-3.2.1.min.js"%}"></script>
+<script src="{% static "vendor/OwlCarousel2-2.2.1/owl.carousel.min.js"%}"></script>
+<script src="{% static "nav/nav.js"%}"></script>
+</html>

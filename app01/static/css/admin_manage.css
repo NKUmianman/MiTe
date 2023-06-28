@@ -1,0 +1,41 @@
+.card-body {
+
+}
+
+.card-body .card-title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.card-body .card-text {
+    font-weight: bold;
+}
+
+.add {
+    content: '';
+    background: url("../img/add.png") no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin-left: 3px;
+    margin-top: 2px;
+}
+
+.success {
+    content: '';
+    background: url("../img/success.png") no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin-right: 5px;
+}
+
+.error-msg {
+    font-size: 13px;
+    color: red;
+    position: absolute;
+    top:40px;
+    left: 5px;
+}

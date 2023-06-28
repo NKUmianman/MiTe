@@ -1,0 +1,277 @@
+@font-face {
+    font-family:ZCOOL KuaiLe;
+    src:url("ZCOOLKuaiLe-Regular.ttf");
+}
+
+.ui-btn {
+    border-radius: 35px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.62rem 2.5rem;
+    border: none;
+    outline: none;
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    line-height: 1.25;
+    transition: all 0.15s ease-in-out;
+}
+
+.ui-btn:focus, .ui-btn:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.ui-btn:focus, .ui-btn.focus {
+    outline: 0;
+    opacity: 0.8;
+}
+
+.ui-btn.disabled, .ui-btn:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.ui-btn.ui-btn-info {
+    background: linear-gradient(to right, #688cf0, #6a68f0);
+    color: white;
+}
+
+
+a.ui-btn:hover {
+    color: white;
+}
+
+/*---------------------------3)顶部导航栏--------------------------- */
+
+.site-top-nav {
+    width: 100%;
+    height: 60px;
+    background-color: whitesmoke;
+    padding: 0 3rem;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+    top: 0;
+    position: fixed;
+    border-bottom: lavender solid;
+    font-family: "ZCOOL KuaiLe";
+
+}
+
+.site-top-nav .site-menu {
+    padding: 0 !important;
+    list-style: none;
+    margin: 0;
+    color: inherit;
+    height: 70px;
+}
+
+.site-top-nav .site-menu > li {
+    display: inline-block;
+    color: inherit;
+    margin: 0 1rem 0 0;
+    position: relative;
+    height: 100%;
+    padding: 18px 0;
+}
+
+.site-top-nav .site-menu > li > a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    transition: color 400ms;
+}
+
+.site-top-nav .site-menu > li > a:hover {
+    color: #5c595a7a;
+}
+
+.site-top-nav .site-menu > li > a.ui-btn:hover {
+    color: whitesmoke;
+}
+
+.site-top-nav .nav-toggle {
+    font-size: 2.4rem;
+    color: inherit;
+    display: none;
+    cursor: pointer;
+    transition: color 400ms;
+}
+
+.site-top-nav .nav-toggle:hover {
+    color: #5c595a7a;
+}
+
+@media (max-width: 63.125em) {
+    .site-top-nav .site-menu {
+        display: none;
+    }
+
+    .site-top-nav .nav-toggle {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 29.6875em) {
+    .site-top-nav {
+        padding: 0 1.5rem;
+    }
+}
+
+
+
+
+/*---------------------------4) 侧边导航栏--------------------------- */
+.no-scroll {
+    overflow: hidden;
+}
+
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    width: 100%;
+    height: 100%;
+    background: rgba(53, 52, 154, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms;
+    font-family: "ZCOOL KuaiLe";
+}
+
+.side-nav .side-nav-menu {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: -210px;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(to bottom, #1030ff, #17a3ff);
+    transition: left 200ms;
+}
+
+.side-nav .side-nav-menu .text-logo {
+    width: 100%;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #949494;
+}
+
+.side-nav .side-nav-menu .text-logo a {
+    text-decoration: none;
+}
+
+.side-nav .side-nav-menu .text-logo a h3 {
+    color: whitesmoke;
+    margin: 0;
+}
+
+.side-nav .side-nav-menu .site-user {
+    width: 100%;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #1030ff;
+}
+
+.side-nav .side-nav-menu .site-user .site-user-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid whitesmoke;
+    position: relative;
+}
+
+.side-nav .side-nav-menu .site-user .site-user-img img {
+    width: 100%;
+    border-radius: inherit;
+}
+
+.side-nav .side-nav-menu .site-user .site-user-img .online {
+    position: absolute;
+    top: 0.4rem;
+    right: -0.2rem;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #51d251;
+}
+
+.side-nav .side-nav-menu .site-user .user-name {
+    margin-top: 0.5rem;
+    text-decoration: none;
+}
+
+.side-nav .side-nav-menu .site-user .user-name strong {
+    color: whitesmoke;
+}
+
+.side-nav .side-nav-menu .menu {
+    padding: 1rem 0;
+    list-style: none;
+}
+
+.side-nav .side-nav-menu .menu li {
+    display: block;
+}
+
+.side-nav .side-nav-menu .menu li a {
+    display: block;
+    text-decoration: none;
+    padding: 12px 2rem;
+    color: whitesmoke;
+    border-left: 3px solid transparent;
+    transition: all 500ms;
+}
+
+.side-nav .side-nav-menu .menu li a.current {
+    border-color: white;
+    background: #1030ff;
+}
+
+.side-nav .side-nav-menu .menu li a:hover {
+    border-color: white;
+    background: #1030ff;
+}
+
+.side-nav .side-nav-menu .logout {
+    text-align: center;
+}
+
+.side-nav .side-nav-menu .logout a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 1.5rem;
+    color: whitesmoke;
+    border: 1px solid lightgrey;
+    margin: 0 auto;
+    transition: border-color 400ms;
+}
+
+.side-nav .side-nav-menu .logout a:hover {
+    border-color: transparent;
+}
+
+.side-nav.show-side-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.side-nav.show-side-menu .side-nav-menu {
+    left: 0;
+}

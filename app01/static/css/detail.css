@@ -1,0 +1,249 @@
+
+body{
+    margin: 0;
+    background-color:rgb(250,250,250);
+  width: 100%;
+  min-width: 500px;
+  font-family: 'ZCOOL KuaiLe', sans-serif;
+}
+
+          /*#E4E6E1;*/
+
+.head{
+  height: 100px;
+}
+
+#left{
+    margin-left: 5rem;
+    margin-bottom: 3rem;
+}
+
+.g-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100px;
+  /*background-color: rgba(211,210,208,0.3);*/
+}
+
+
+.container1 {
+  background: rgb(250,250,250);
+  line-height: 1.4;
+}
+
+.container1 .container2 {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0 40px;
+}
+
+.details,.warn,.Guess{
+  margin: 20px 0;
+}
+
+.details h5 ,.Guess h5,.warn h5{
+  margin: 0;
+  padding:10px 28px;
+}
+.details h6 ,.Guess h6,.warn h6{
+  padding: 0 28px;
+}
+
+.Guess .cards{
+  margin: 0 ;
+  padding:10px 28px;
+
+}
+
+.details .card .card-body .tab-pane .attrs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.details .card .card-body .tab-pane .attrs .item {
+  width: 50%;
+  display: flex;
+  margin: 0;
+  padding:10px 28px;
+}
+
+.warn p {
+  line-height: 40px;
+  padding-left: 25px;
+  color: #666;
+}
+
+.warn p.tit {
+  color: #333;
+}
+.info {
+  background: #fff;
+  display: flex;
+  min-height: 500px;
+
+}
+.info .container{
+  display: flex;
+}
+
+/* 当页面宽度小于600像素时，竖向排列 */
+@media (max-width: 1400px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+.info .left {
+  width: 580px;
+  padding: 30px 50px;
+}
+
+
+.info .left .photo {
+  width: 480px;
+  height: 400px;
+  display: flex;
+  position: relative;
+}
+
+.info .left .photo .middle {
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+.info .left .photo .middle .layer {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(0,0,0,0.3);
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: move;
+}
+
+.info .left .photo .large {
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  position: absolute;
+  left: 412px;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+  display: none;
+  background-image: url("../img/1.jpg");
+  background-size: 800px 800px;
+}
+
+
+.info .left .photo .middle img {
+  width: 100%;
+  height: 100%;
+}
+
+.info .left .photo .small {
+  width: 80px;
+  height: 400px;
+}
+
+.info .left .photo .small ul li {
+  list-style: none;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 15px;
+  margin-left: 12px;
+  border: 2px solid transparent;
+}
+
+.info .left .photo .small ul li img {
+  width: 100%;
+  height: 100%;
+}
+
+.info .left .photo .small ul li.active, .info .left .photo .small ul li:hover {
+  border-color: cornflowerblue;
+}
+
+
+
+.info .right {
+  width: 660px;
+  padding-top: 30px;
+}
+
+.info .right h3 {
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.info .right .key {
+  padding-top: 10px;
+  color: #999;
+}
+
+/*价格标签*/
+.info .right .price {
+  padding: 10px 0;
+  color: #CF4444;
+  margin-right: 5px;
+  font-size: 22px;
+}
+
+
+
+.info .right  .num {
+  width: 176px;
+  height: 38px;
+  border: 1px solid #e4e4e4;
+  display: flex;
+}
+
+.info .right .num input {
+  border-left: 10px solid #e4e4e4;
+  border-right: 10px solid #e4e4e4;
+  width: 140px;
+  line-height: 26px;
+  text-align: center;
+  color: black;
+}
+
+.info .right .num a {
+  width: 25px;
+  text-align: center;
+  line-height: 26px;
+  color: black;
+   display: flex;
+  align-items: center;
+}
+
+.info .right .item {
+  display: flex;
+  padding:  0;
+  align-items: center;
+}
+
+.info .right .item .dt {
+  width: 60px;
+  color: black;
+}
+
+
+.info .right .buy {
+  width: 157px;
+  height: 40px;
+  background: cornflowerblue;
+  border-radius: 4px;
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none; /* 去掉下划线 */
+}
+

@@ -1,0 +1,223 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--meta tags-->
+    <meta charset="UTF-8">
+    <meta name="description" content="Services Listing HTML5 CSS3 template">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript, services, listing">
+    <meta name="author" content="Ui-DesignLab">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--end meta tags-->
+    <title>MiTe Account</title>
+    <!--stylesheets-->
+    <link rel="stylesheet" href={% static "vendor/css/bootstrap.min.css" %}>
+    <link rel="stylesheet" href={% static "vendor/fontawesome-free-5.12.0-web/css/all.min.css" %}>
+    <link rel="stylesheet" href={% static "vendor/perfect-scrollbar/css/perfect-scrollbar.min.css" %}>
+    <link rel="stylesheet" href={% static "css/login-register.css" %}><!--end stylesheets--><!--google fonts-->
+
+</head>
+
+<body>
+<!--navigation bars-->
+<nav class="site-top-nav">
+    <div class="logo"><a style="font-size: xx-large"><strong>MiTe</strong></a></div>
+    <ul class="site-menu">
+        <li><a href="/login/">登录</a></li>
+        <li><a href="/home/">主页</a></li>
+        <li><a href="/explore/">商品 </a></li>
+        <li><a href="/user/">用户 </a></li>
+        <li><a href="/admin/home/">后台 </a></li>
+        <li><a href="#" class="ui-btn ui-btn-info"><strong>Get Started</strong></a></li>
+    </ul>
+    <i class="nav-toggle fa fa-bars"></i>
+</nav>
+
+<div id="side-nav" class="side-nav">
+    <div class="side-nav-menu perfect-scroll">
+        <div class="text-logo"><a href="#">
+            <h3>MiTe</h3>
+        </a></div>
+        <div class="site-user">
+            <div class="site-user-img"><img src="{% static "img/用户头像.jpg" %}" alt=""><span class="online"></span></div>
+            <a href="#" class="user-name"><strong>小新</strong></a>
+        </div>
+        <ul class="menu">
+            <li><a href="/login/" class="current">登录</a></li>
+            <li><a href="/home/">主页</a></li>
+            <li><a href="/explore/">商品</a></li>
+            <li><a href="/user/">用户</a></li>
+            <li><a href="/admin/home/">后台</a></li>
+        </ul>
+        <div class="logout"><a href="login-register.html">退出登录</a></div>
+    </div>
+</div>
+
+<!-- <div id="side-nav" class="side-nav">
+   <div class="side-nav-menu perfect-scroll">
+       <div class="text-logo"><a href="#"><h3><strong>MiTe</strong></h3></a></div>
+       <ul class="menu">
+           <li><a href="#" class="current"><strong>Home</strong></a></li>
+           <li><a href="#"><strong>Explore</strong></a></li>
+           <li><a href="#"><strong>Pricing</strong></a></li>
+           <li><a href="#"><strong>Dropdown link</strong></a></li>
+       </ul>
+   </div>
+</div> -->
+<!--end navigation bars-->
+
+
+<!--login/register form-->
+<div class="forms-wrapper">
+    <div class="forms-box">
+        <div class="container" id="container">
+
+            <!-- 注册页面 -->
+            <div class="form-container sign-up-container">
+                <form action="/admin/user/register/">
+                    <h1>创建新的账户</h1>
+                    <!-- 公共组件 -->
+                    <div class="social-container">
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                    </div>
+                    <input type="text" name="name" id="name" placeholder="UserName...">
+                    <input type="text" name="account" id="account" placeholder="Account...">
+                    <input type="password" name="password" id="password" placeholder="Password...">
+                    <button>注册</button>
+                </form>
+            </div>
+
+            <!-- 登录页面 -->
+            <div class="form-container sign-in-container">
+                <form method="post" action="/login/check/">
+                    {% csrf_token %}
+                    <h1>开始购物旅程</h1>
+                    <!-- 公共组件 -->
+                    <div class="social-container">
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                    </div>
+                    <input type="text" name="account" id="account" placeholder="Account...">
+                    <input type="password" name="password" id="password" placeholder="Password...">
+                    <div style="color: red;">{{ error }}</div>
+                    <button>登录</button>
+                </form>
+            </div>
+
+            <!-- 覆盖容器 -->
+            <div class="overlay-container">
+                <div class="overlay">
+
+                    <!-- 覆盖左边 -->
+                    <div class="overlay-penal overlay-left-container">
+                        <h1>你好，新朋友！</h1>
+                        <p>
+                            To keep connected with us please login with your personal info
+                        </p>
+                        <button class="ghost" id="signIn">登录</button>
+                    </div>
+
+                    <!-- 覆盖右边 -->
+                    <div class="overlay-penal overlay-right-container">
+                        <h1>欢迎回家!</h1>
+                        <p>
+                            Enter your personal details and start journey with us
+                        </p>
+                        <button class="ghost" id="signUp">注册</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end login/register form-->
+
+
+<!--chat box-->
+<a href="#" class="chat-box-btn"><i class="fa fa-comment icon-sw"></i></a>
+<div class="chat-box">
+    <div class="chat-top">
+        <section>
+            <h6 class="org-name">MiTe</h6>
+            <div class="repliers">
+                <div class="r-img"><img src="{% static "img/头像1.jpg" %}" alt=""><strong class="name">小新</strong></div>
+                <div class="r-img"><img src="{% static "img/头像2.jpg" %}" alt=""><strong class="name">小爱</strong></div>
+            </div>
+        </section>
+    </div>
+    <div class="chat-flow" id="chat-flow">
+        <p class="outbound">这里的商品简直便宜极了！</p>
+        <p class="inbound">确实！购物体验也非常不错！</p>
+    </div>
+    <form class="chat-form" action="#">
+        <input type="text" class="form-control chat-message" placeholder="Send a Message">
+    </form>
+</div>
+<!--end chat box-->
+
+
+<!--page loader-->
+<div class="page-loader">
+    <div class="loader"><img src="../static/img/logo.png" alt=""></div>
+</div>
+<!--end page loader-->
+
+
+<!--footer section-->
+<footer class="footer">
+    <div class="footer-item">
+        <strong>获得联系</strong>
+        <a href="#"><i class="fa fa-angle-right"></i>获取支持</a>
+        <a href="#"><i class="fa fa-angle-right"></i>广告宣传</a>
+        <a href="#"><i class="fa fa-angle-right"></i>社区服务</a>
+        <a href="#"><i class="fa fa-angle-right"></i>项目研发</a>
+        <a href="#"><i class="fa fa-angle-right"></i>联系我们</a>
+    </div>
+    <div class="footer-item">
+        <strong>遇到问题？</strong>
+        <a href="#"><i class="fa fa-angle-right"></i>帮助</a>
+        <a href="#"><i class="fa fa-angle-right"></i>交流</a>
+        <a href="#"><i class="fa fa-angle-right"></i>现场支持</a>
+    </div>
+    <div class="footer-item">
+        <strong>关注我们</strong>
+        <a href="#"><i class="fa fa-angle-right"></i>Facebook</a>
+        <a href="#"><i class="fa fa-angle-right"></i>Twitter</a>
+        <a href="#"><i class="fa fa-angle-right"></i>Bilibili</a>
+        <a href="#"><i class="fa fa-angle-right"></i>Youtube</a>
+        <a href="#"><i class="fa fa-angle-right"></i>Tik Tok</a>
+    </div>
+    <div class="footer-item">
+        <strong>主要链接</strong>
+        <a href="#"><i class="fa fa-angle-right"></i>主页</a>
+        <a href="#"><i class="fa fa-angle-right"></i>产品</a>
+        <a href="#"><i class="fa fa-angle-right"></i>服务</a>
+        <a href="#"><i class="fa fa-angle-right"></i>关于</a>
+    </div>
+</footer>
+<!--end footer section-->
+
+
+<!--scripts-->
+<script src={% static "vendor/js/jquery-3.2.1.min.js" %}></script>
+
+<script src={% static "vendor/js/popper.js" %}></script>
+<script src={% static "vendor/js/bootstrap.min.js" %}></script>
+<script src={% static "vendor/js/alertify.js" %}></script>
+<script src={% static "vendor/js/jquery.knob.min.js" %}></script>
+<script src={% static "vendor/js/summernote-bs4.min.js" %}></script>
+<script src={% static "vendor/js/dropzone.js" %}></script>
+<script src={% static "vendor/OwlCarousel2-2.2.1/owl.carousel.min.css" %}></script>
+<script src={% static "vendor/js/typed.js" %}></script>
+<script src={% static "vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js" %}></script>
+<script src={% static "js/login-register.js" %}></script>
+
+<!--end scripts-->
+</body>
+
+</html>

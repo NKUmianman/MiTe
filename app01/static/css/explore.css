@@ -1,0 +1,72 @@
+body{
+  font-family: 'ZCOOL KuaiLe', sans-serif;
+  background-color: #F3EEEA;
+          /*#E4E6E1;*/
+}
+
+.head{
+  height: 210px;
+    background-image: linear-gradient(to bottom, rgba(221,200,221,0.3), #F3EEEA);
+}
+
+#body{
+  margin: 5%;
+}
+
+#left{
+    margin-left: 5rem;
+    margin-bottom: 3rem;
+}
+
+.g-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 170px;
+  /*background-color: rgba(211,210,208,0.3);*/
+}
+
+.Cards {
+  margin: 1rem;
+}
+
+.SideBar{
+    margin: 1rem;
+
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+}
+
+#“changeHeight”{
+    height: 40px;
+    display: flex;
+  align-items: center;
+}
+
+.select-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.select-wrapper span {
+  margin-right: 10px;
+}
+
+@media (max-width: 880px) {
+  .select-wrapper span {
+    display: none;
+  }
+}

@@ -1,0 +1,685 @@
+/*body, h1, h2, h3, h4, h5, h6, button, span, i, strong, p, a, label {*/
+/*    font-family: "Rancho";*/
+/*    text-transform: none;*/
+/*}*/
+
+
+@font-face {
+    font-family:ZCOOL KuaiLe;
+    src:url("../font/ZCOOLKuaiLe-Regular.ttf");
+}
+
+
+/*---------------------------Buttons--------------------------- */
+.ui-btn {
+    border-radius: 35px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.62rem 2.5rem;
+    display: inline-block;
+    line-height: 1.25;
+    transition: all 0.15s ease-in-out;
+}
+
+.ui-btn:focus, .ui-btn:hover {
+    opacity: 0.8;
+}
+
+
+.ui-btn.ui-btn-info {
+    background: linear-gradient(to right, orangered, yellowgreen);
+    color: white;
+}
+
+.ui-btn.ui-btn-purchase {
+    background: linear-gradient(to right, orange, orangered);
+    color: white;
+}
+
+.ui-btn.ui-btn-success {
+    background: linear-gradient(to right, #688cf0, #6a68f0);
+    color: white;
+}
+
+
+
+/*---------------------------Top Navigation--------------------------- */
+
+.site-top-nav {
+    width: 100%;
+    height: 60px;
+    background-color: whitesmoke;
+    padding: 0 3rem;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+    top: 0;
+    position: fixed;
+    border-bottom: lavender solid;
+    font-family: "ZCOOL KuaiLe";
+
+}
+
+
+.site-top-nav .site-menu {
+    padding: 0 !important;
+    list-style: none;
+    margin: 0;
+    color: inherit;
+    height: 70px;
+}
+
+.site-top-nav .site-menu > li {
+    display: inline-block;
+    color: inherit;
+    margin: 0 1rem 0 0;
+    position: relative;
+    height: 100%;
+    padding: 18px 0;
+}
+
+.site-top-nav .site-menu > li > a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    font-family: "ZCOOL KuaiLe";
+    transition: color 400ms;
+}
+
+.site-top-nav .site-menu > li > a:hover {
+    color: #ff006a;
+}
+
+.site-top-nav .site-menu > li > a.ui-btn:hover {
+    color: whitesmoke;
+}
+
+.site-top-nav .nav-toggle {
+    font-size: 2.4rem;
+    color: inherit;
+    display: none;
+    cursor: pointer;
+    transition: color 400ms;
+}
+
+.site-top-nav .nav-toggle:hover {
+    color: #ff006a;
+}
+
+@media (max-width: 63.125em) {
+    .site-top-nav .site-menu {
+        display: none;
+    }
+
+    .site-top-nav .nav-toggle {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 29.6875em) {
+    .site-top-nav {
+        padding: 0 1.5rem;
+    }
+}
+
+/*--------------------------- Side Navigation--------------------------- */
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    width: 100%;
+    height: 100%;
+    background: rgba(53, 52, 154, 0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms;
+    font-family: "ZCOOL KuaiLe";
+}
+
+.side-nav .side-nav-menu {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: -210px;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(to bottom, #1030ff, #17a3ff);
+    transition: left 200ms;
+}
+
+.side-nav .side-nav-menu .text-logo {
+    width: 100%;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #949494;
+}
+
+.side-nav .side-nav-menu .text-logo a {
+    text-decoration: none;
+}
+
+.side-nav .side-nav-menu .text-logo a h3 {
+    color: whitesmoke;
+    margin: 0;
+}
+
+.side-nav .side-nav-menu .site-user {
+    width: 100%;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #1030ff;
+}
+
+.side-nav .side-nav-menu .site-user .site-user-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid whitesmoke;
+    position: relative;
+}
+
+.side-nav .side-nav-menu .site-user .site-user-img img {
+    width: 100%;
+    border-radius: inherit;
+}
+
+.side-nav .side-nav-menu .site-user .site-user-img .online {
+    position: absolute;
+    top: 0.4rem;
+    right: -0.2rem;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #51d251;
+}
+
+.side-nav .side-nav-menu .site-user .user-name {
+    margin-top: 0.5rem;
+    text-decoration: none;
+}
+
+.side-nav .side-nav-menu .site-user .user-name strong {
+    color: whitesmoke;
+}
+
+.side-nav .side-nav-menu .menu {
+    padding: 1rem 0;
+    list-style: none;
+}
+
+.side-nav .side-nav-menu .menu li {
+    display: block;
+}
+
+.side-nav .side-nav-menu .menu li a {
+    display: block;
+    text-decoration: none;
+    padding: 12px 2rem;
+    color: whitesmoke;
+    border-left: 3px solid transparent;
+    transition: all 500ms;
+}
+
+.side-nav .side-nav-menu .menu li a.current {
+    border-color: white;
+    background: #1030ff;
+}
+
+.side-nav .side-nav-menu .menu li a:hover {
+    border-color: white;
+    background: #1030ff;
+}
+
+.side-nav .side-nav-menu .logout {
+    text-align: center;
+}
+
+.side-nav .side-nav-menu .logout a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 1.5rem;
+    color: whitesmoke;
+    border: 1px solid lightgrey;
+    margin: 0 auto;
+    transition: border-color 400ms;
+}
+
+.side-nav .side-nav-menu .logout a:hover {
+    border-color: transparent;
+}
+
+.side-nav.show-side-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.side-nav.show-side-menu .side-nav-menu {
+    left: 0;
+}
+
+
+/*-----landing banner */
+.landing-banner {
+    width: 100%;
+    height: 500px;
+    background:
+            linear-gradient(to bottom,rgba(216, 191, 216, 0.86),rgba(236, 206, 208, 0.5),rgba(244, 209, 215, 0.5));
+    position: relative;
+    background-size: cover;
+    margin-top: 60px;
+
+}
+
+.landing-banner .owl-carousel .item .banner-content {
+    width: 100%;
+    height: calc(100% - 100px);
+    padding: 3rem 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.landing-banner .owl-carousel .item .banner-content .title-style1 {
+    font-size: 60px;
+
+}
+
+.landing-banner .owl-carousel .item .banner-content .title-style2 {
+    margin-bottom: 2rem;
+}
+
+.landing-banner .owl-carousel .item .banner-content .title-style3 {
+    font-size: 40px;
+    font-family: "ZCOOL KuaiLe";
+}
+
+.landing-banner .owl-carousel .item .banner-content .title-style2 span {
+    /*default */
+    color:#7193a3 ;
+}
+
+.landing-banner .owl-carousel .item .banner-content p {
+    margin-bottom: 2rem;
+}
+
+.landing-banner .owl-carousel .item .banner-content p span {
+    display: block;
+    color: purple;
+    font-family: "Pangolin";
+}
+
+.landing-banner .owl-carousel .item .product-item {
+    height: 450px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-banner .owl-carousel .item .product-item .item-image {
+    flex-basis: 30%;
+}
+
+.landing-banner .owl-carousel .item .product-item .item-image img {
+    width: 100%;
+}
+
+.landing-banner .owl-carousel .item .product-item .item-info {
+    flex-basis: 53%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.landing-banner .owl-carousel .item .product-item .item-info h2 {
+    font-size: 65px;
+    font-family: "Rancho"
+
+}
+
+.landing-banner .owl-carousel .item .product-item .item-info p {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5em;
+    width: 85%;
+    font-size: 2rem;
+    font-family: "Rancho"
+}
+
+/*-----end landing banner */
+
+/*-----explore */
+.exp {
+    width: 100%;
+    padding: 2rem 6rem;
+    background: lavender;
+}
+.exp h1 {
+    text-align: center;
+}
+/*-----end explore */
+
+/*----------index_two banner */
+
+.index-one-banner {
+    width: 100%;
+    background: linear-gradient(to right, rgba(236, 206, 208, 0.5),rgba(244, 209, 215, 0.86)), center left;
+    padding: 2rem 4rem;
+}
+
+.index-one-banner .owl-carousel .item{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.index-one-banner .item-title{
+    border-bottom: solid;
+}
+
+
+.from-blog {
+    width: 100%;
+    padding: 2rem 6rem 0 6rem;
+    display: flex;
+    justify-content: space-between;
+    transition: padding 400ms;
+}
+.from-blog .from-blog-c {
+    flex-basis: 30%;
+}
+
+.from-blog .from-blog-c .post {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 35px 1px lightgrey;
+    transition: box-shadow 400ms;
+}
+
+.from-blog .from-blog-c .post img {
+    width: 94%;
+    margin: 0.5rem 3% 0 3%;
+    border-radius: inherit;
+    position: relative;
+    box-shadow: 0 8px 35px -1px #838383;
+    transition: box-shadow 400ms;
+}
+
+.from-blog .from-blog-c .post .post-content {
+    padding: 1rem;
+}
+
+.from-blog .from-blog-c .post .post-content h2 {
+    color: red;
+}
+
+.from-blog .from-blog-c .post .post-content a strong {
+    font-size: 0.96rem;
+    color: black;
+}
+
+.from-blog .from-blog-c .post .post-content a:hover strong {
+    color: #17a3ff;
+    text-decoration: underline;
+}
+
+.from-blog .from-blog-c .post .post-content .post-time i,
+.from-blog .from-blog-c .post .post-content .post-time em {
+    font-size: 0.65rem;
+    color: #17a3ff;
+}
+
+.from-blog .from-blog-c .post:hover img {
+    box-shadow: none;
+}
+
+/*-----our services */
+
+.our-services {
+    width: 100%;
+    padding: 1rem 4rem 4rem 4rem;
+    background: linear-gradient(to bottom, transparent, lavender,  transparent);
+}
+
+.service-head{
+     margin-bottom: 3rem;
+    border-bottom: solid;
+}
+
+.our-services .service {
+    width: 90%;
+    margin: 0 auto 2rem auto;
+    background: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    transition: box-shadow 500ms;
+}
+
+.our-services .service span {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid rgba(216, 191, 216, 0.86);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 500ms;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.our-services .service span i {
+    font-size: 2.8rem;
+    transition: color 500ms;
+}
+
+.our-services .service span:before {
+    content: '';
+    position: absolute;
+    top: -15%;
+    left: -15%;
+    width: 130%;
+    height: 130%;
+    border-bottom: 1px solid rgba(216, 191, 216, 0.86);
+    border-left: 1px solid rgba(216, 191, 216, 0.86);
+    border-radius: 50%;
+}
+
+.our-services .service strong {
+    text-transform: uppercase;
+    margin: 0.6rem 0;
+    color: #51d251;
+    font-weight: 400;
+}
+
+.our-services .service p {
+    width: 100%;
+    text-align: center;
+    font-size: 0.88rem;
+}
+
+
+
+.our-services .service:hover {
+    box-shadow: 0 4px 20px 1px rgba(216, 191, 216, 0.86);
+}
+
+.our-services .service:hover span {
+    transform: translateY(-1rem);
+    background: lavender;
+    box-shadow: 4px 0 15px -1px lavender;
+}
+
+.our-services .service:hover span i {
+    color: purple;
+}
+/*----------end our service--------- */
+/*----------index_two banner--------- */
+.index-two-banner {
+    width: 100%;
+    background: linear-gradient(to bottom,rgba(216, 191, 216, 0.86),rgba(236, 206, 208, 0.5),rgba(244, 209, 215, 0.5));
+    padding: 2rem 4rem;
+
+}
+
+.index-two-banner .item-title{
+    border-bottom: solid;
+}
+
+.index-two-banner .owl-carousel .items{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sale-item {
+    width: 100%;
+    flex-basis: 23%;
+    margin: 0 1% 2rem 1%;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px -1px lightgrey;
+
+}
+
+.sale-item .sale-lister {
+    width: 100%;
+    min-height: 65px;
+    background: white;
+    border-radius: 0 0 4px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: background 500ms;
+}
+
+.sale-item .sale-lister .lister-pic {
+    display: flex;
+    align-items: center;
+}
+
+.sale-item .sale-lister .lister-pic div {
+    line-height: 1;
+}
+
+.sale-item .sale-lister .lister-pic div img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.sale-item .sale-lister .lister-pic div strong {
+    display: block;
+    font-size: 0.8rem;
+    color: inherit;
+    transition: color 500ms;
+}
+
+.sale-item div span{
+    text-decoration: none;
+    font-size: 0.5rem;
+    color: inherit;
+    display: block;
+}
+
+.sale-item .sale-lister:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 0 0 4px 4px;
+    background: linear-gradient(to right, #17a3ff, rgba(53, 52, 154, 0.6), #17a3ff);
+}
+
+
+.sale-item:hover .sale-lister {
+    background: transparent;
+    color: whitesmoke;
+}
+
+.footer {
+    width: 100%;
+    background: #ffffff;
+    padding: 3rem 8rem 3.5rem 8rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .footer-item {
+    flex-basis: 22%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .footer-item strong {
+    color: black;
+    display: block;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-family: "ZCOOL KuaiLe";
+}
+
+.footer .footer-item a {
+    display: inline-block;
+    padding: 2px 0;
+    font-size: 0.9rem;
+    color: black;
+    font-family: "ZCOOL KuaiLe";
+
+}
+
+/*--------------Footer--------------*/
+.bottom-strip {
+    width: 100%;
+    min-height: 60px;
+    padding: 0 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: whitesmoke;
+    font-family: "ZCOOL KuaiLe";
+}
+
+.bottom-strip .copyright {
+    flex-basis: 30%;
+}
+/*-----end Footer */
+
+/*--------------icon--------------*/
+.icon {
+    width: 1.3em;
+    height: 1.3em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+/*-----end icon */
+

@@ -1,0 +1,455 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>MiTe Front Page</title>
+    <link rel="stylesheet" href={% static "vendor/css/bootstrap.min.css" %}>
+    <link rel="stylesheet" href={% static "vendor/css/animate.min.css" %}>
+     <link rel="stylesheet" href={% static "vendor/fontawesome-free-5.12.0-web/css/all.min.css" %}>
+     <link rel="stylesheet" href={% static "vendor/OwlCarousel2-2.2.1/owl.carousel.min.css" %}>
+     <link rel="stylesheet" href={% static "vendor/OwlCarousel2-2.2.1/owl.theme.green.min.css" %}>
+     <link rel="stylesheet" href={% static "vendor/css/animate.min.css" %}>
+     <link rel="stylesheet" href={% static "vendor/iconfont.css" %}>
+     <link rel="stylesheet" href={% static "css/hyb.css" %}>
+
+    <!--google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple" rel="stylesheet">
+
+    <!--end google fonts-->
+
+</head>
+<body>
+
+
+<!--side-nav -->
+
+<div id="side-nav" class="side-nav">
+        <div class="side-nav-menu perfect-scroll">
+            <div class="text-logo"><a href="#">
+                    <h3>MiTe</h3>
+                </a></div>
+            <div class="site-user">
+                <div class="site-user-img"><img src="{% static "img/用户头像.jpg" %}" alt=""><span class="online"></span></div>
+                <a href="#" class="user-name"><strong>{{ name }}</strong></a>
+            </div>
+            <ul class="menu">
+                <li><a href="/login/">登录</a></li>
+                <li><a href="/home/" class="current">主页</a></li>
+                <li><a href="/explore/">商品</a></li>
+                <li><a href="/user/">用户</a></li>
+                <li><a href="/admin/home/">后台</a></li>
+            </ul>
+            <div class="logout"><a href="#">退出登录</a></div>
+        </div>
+    </div>
+
+<!--landing banner -->
+<div class="landing-banner">
+
+    <nav class="site-top-nav">
+        <div class="logo"><a style="font-size: xx-large"><strong>MiTe</strong></a></div>
+        <ul class="site-menu">
+            <li><a href="/login/">登录</a></li>
+            <li><a href="/home/" class="current">主页</a></li>
+            <li><a href="/explore/">商品</a></li>
+            <li><a href="/user/">用户 </a></li>
+            <li><a href="/admin/home/">后台 </a></li>
+            <li><a href="#" class="ui-btn ui-btn-success"><strong>Get Started</strong></a></li>
+        </ul>
+        <i class="nav-toggle fa fa-bars"></i>
+    </nav>
+
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <div class="banner-content">
+                <h3 class="title-style3">欢迎来到</h3>
+                <h1 class="title-style1"> MiTe <strong>交易平台</strong></h1>
+                <h2 class="title-style2"><span>Get what you want</span></h2>
+                <p>
+                    <span>Strive to provide customers with the best service</span>
+                </p>
+                <div><a href="#" class="ui-btn ui-btn-info">Start Here</a></div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="product-item">
+                <div class="item-info">
+                    <h2><strong>NEW Stylish</strong></h2>
+                    <h2><strong>Fuzzy Toys</strong></h2>
+                    <p>Special Style Design for Your Love Ones</p>
+                    <div><a href="#" class="ui-btn ui-btn-purchase">PURCHASE NOW</a></div>
+                </div>
+                <div class="item-image"><img src="{% static "img/Teddy.png" %}" alt=""></div>
+
+            </div>
+
+        </div>
+        <div class="item">
+            <div class="product-item">
+                <div class="item-info">
+                     <h2><strong>HIGH Quality</strong></h2>
+                    <h2><strong>Fantastic Booze</strong></h2>
+                    <p>Full-bodied Wine with Mellow Taste</p>
+                    <div><a href="#" class="ui-btn ui-btn-purchase">PURCHASE NOW</a></div>
+                </div>
+                <div class="item-image"><img src="{% static "img/booze.png" %}" alt=""></div>
+
+            </div>
+        </div>
+        <div class="item">
+            <div class="product-item">
+                <div class="item-info">
+                     <h2><strong>NEW Stylish</strong></h2>
+                    <h2><strong>Decore Furniture</strong></h2>
+                    <p>Unique Furniture Style Design for Your Family</p>
+                    <div><a href="#" class="ui-btn ui-btn-purchase">PURCHASE NOW</a></div>
+                </div>
+                <div class="item-image"><img src="{% static "img/hammock.png" %}" alt=""></div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</div>
+
+<!--start here-->
+<div class="exp">
+    <h1><strong style="color: black">有 150,000,000 用户在这里挑选产品!</strong></h1>
+</div>
+<!--end start here-->
+
+<!--index-one-banner -->
+<div class="index-one-banner">
+    <div class="item-title">
+        <h1><strong>#Best Sales</strong></h1>
+    </div>
+    <div class="owl-carousel  owl-theme">
+        <div class="item">
+            <div class="from-blog">
+                <div class="from-blog-c">
+                    <div class="post"><img src="{% static "img/myimg2.jpg" %}" alt="">
+                        <div class="post-content">
+                            <a href="#"><strong>Apple iPhone 13 Pro Max</strong></a>
+                            <h2>￥6029</h2>
+                            <span class="post-time"><i class="fa fa-clock-o"></i><em>10 May, 2023</em></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="from-blog-c">
+                    <div class="post"><img src="{% static "img/myimg3.jpg" %}" alt="">
+                        <div class="post-content">
+                            <a href="#"><strong>华为 HUAWEI mate40 Pro</strong></a>
+                             <h2>￥3939</h2>
+                            <span class="post-time"><i class="fa fa-clock-o"></i><em>10 May, 2023</em></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="from-blog-c">
+                    <div class="post"><img src="{% static "img/myimg4.jpg" %}" alt="">
+                        <div class="post-content">
+                            <a href="#"><strong>联想拯救者二手Y9000P</strong></a>
+                            <h2>￥5999</h2>
+                            <span class="post-time"><i class="fa fa-clock-o"></i><em>10 May, 2023</em></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <div class="item">
+            <div class="from-blog">
+                <div class="from-blog-c">
+                    <div class="post"><img src="{% static "img/myimg5.png" %}" alt="">
+                        <div class="post-content">
+                            <a href="#"><strong>佳能G7X二手数码相机</strong></a>
+                            <h2>￥1999</h2>
+                            <span class="post-time"><i class="fa fa-clock-o"></i><em>10 May, 2023</em></span></div>
+                    </div>
+                </div>
+                <div class="from-blog-c">
+                    <div class="post"><img src="{% static "img/myimg6.jpg" %}" alt="">
+                        <div class="post-content">
+                            <a href="#"><strong>欧米茄OMEGA星座系列女表</strong></a>
+                             <h2>￥15900</h2>
+                            <span class="post-time"><i class="fa fa-clock-o"></i><em>10 May, 2023</em></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="from-blog-c">
+                    <div class="post"><img src="{% static "img/myimg7.jpg" %}" alt="">
+                        <div class="post-content">
+                            <a href="#"><strong>2017-2021年茅台王子酒</strong></a>
+                            <h2>￥2050</h2>
+                            <span class="post-time"><i class="fa fa-clock-o"></i><em>10 May, 2023</em></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end index-one-banner -->
+
+<!--our services-->
+<div class="our-services">
+    <div class="service-head">
+        <h1><strong>#Our Services</strong></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <div class="service">
+                <span><i>
+                     <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-gouwuche1"></use>
+                </svg>
+                </i></span>
+
+                <strong>Safe payment</strong>
+                <p>We guarantee the safety of payment and provide protection for your money!</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="service">
+                 <span><i>
+                     <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-songhuo"></use>
+                </svg>
+                </i></span>
+                <strong>Free shopping</strong>
+                <p>We offer home delivery and free shipping!</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="service current">
+                <span><i>
+                     <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-_fuwu"></use>
+                     </svg>
+                    </i></span>
+                <strong>Online Support</strong>
+                <p>Our customer service is online 24 hours a day to solve any shopping problems!</p>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="service">
+                <span><i>
+                     <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-jiaoliu"></use>
+                     </svg>
+                    </i></span>
+                <strong>Ready Market</strong>
+                <p>We have over 1000 retailers for all your shopping needs!</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--end our services-->
+
+<!--index-two-banner -->
+<div class="index-two-banner">
+    <div class="item-title">
+        <h1><strong>#Customer Comments</strong></h1>
+    </div>
+    <div class="owl-carousel  owl-theme">
+        <div class="items">
+            <div class="sale-item">
+                <div class="sale-lister">
+                    <div class="lister-pic">
+                        <div><img src="{% static "img/icon2.jpg" %}" alt=""></div>
+                        <div><strong>绵满</strong></div>
+                        <p>&nbsp</p>
+                        <span>&nbsp&nbsp宝贝收到了，发货很快!</span>
+                    </div>
+
+                    <a href="#"><i class="fa fa-angle-right fa-2x"></i></a>
+                </div>
+
+            </div>
+            <div class="sale-item">
+                <div class="sale-lister">
+                    <div class="lister-pic">
+                        <div><img src="{% static "img/icon4.jpg" %}" alt=""></div>
+                        <div><strong>小晞</strong></div>
+                        <p>&nbsp</p>
+                        <span>&nbsp&nbsp一直想买，没有失望。</span>
+                    </div>
+                    <a href="#"><i class="fa fa-angle-right fa-2x"></i></a>
+                </div>
+            </div>
+
+            <div class="sale-item">
+                <div class="sale-lister">
+                    <div class="lister-pic">
+                        <div><img src="{% static "img/Jimmy.jpg" %}" alt=""></div>
+                        <div><strong>Saul</strong></div>
+                         <p>&nbsp</p>
+                        <span>&nbsp&nbsp商品质量相当好！</span>
+                    </div>
+                    <a href="#"><i class="fa fa-angle-right fa-2x"></i></a>
+                </div>
+            </div>
+            <div class="sale-item">
+                <div class="sale-lister">
+                    <div class="lister-pic">
+                        <div><img src="{% static "img/Kim.jpg" %}" alt=""></div>
+                        <div><strong>Kim</strong></div>
+                        <p>&nbsp</p>
+                        <span>&nbsp&nbsp服务老客户周到！</span>
+                    </div>
+                    <a href="#"><i class="fa fa-angle-right fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="items">
+            <div class="sale-item">
+                <div class="sale-lister">
+                    <div class="lister-pic">
+                        <div><img src="{% static "img/Walt.jpg" %}" alt=""></div>
+                        <div><strong>Watler</strong></div>
+                        <p>&nbsp</p>
+                        <span>&nbsp&nbspGood product!</span>
+                    </div>
+                    <a href="#"><i class="fa fa-angle-right fa-2x"></i></a>
+                </div>
+            </div>
+            <div class="sale-item">
+                <div class="sale-lister">
+                    <div class="lister-pic">
+                        <div><img src="{% static "img/icon3.jpg" %}" alt=""></div>
+                        <div><strong>微醺</strong></div>
+                        <p>&nbsp</p>
+                        <span>&nbsp&nbsp宝贝图片相符!</span>
+                    </div>
+                    <a href="#"><i class="fa fa-angle-right fa-2x"></i></a>
+                </div>
+            </div>
+
+            <div class="sale-item">
+                <div class="sale-lister">
+                    <div class="lister-pic">
+                        <div><img src="{% static "img/Jessi.jpg" %}" alt=""></div>
+                        <div><strong>Jesse</strong></div>
+                        <p>&nbsp</p>
+                        <span>&nbsp&nbsp Will buy again!</span>
+                    </div>
+                    <a href="#"><i class="fa fa-angle-right fa-2x"></i></a>
+                </div>
+            </div>
+
+
+            <div class="sale-item">
+                <div class="sale-lister">
+                    <div class="lister-pic">
+                        <div><img src="{% static "img/icon5.jpg" %}" alt=""></div>
+                        <div><strong>阑珊</strong></div>
+                        <p>&nbsp</p>
+                        <span>&nbsp&nbsp性价比相对是比较高的</span>
+                    </div>
+                    <a href="#"><i class="fa fa-angle-right fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="items">
+            <div class="sale-item">
+                <div class="sale-lister">
+                    <div class="lister-pic">
+                        <div><img src="{% static "img/icon1.jpg" %}" alt=""></div>
+                        <div><strong>Han.</strong></div>
+                        <p>&nbsp</p>
+                        <span>&nbsp&nbsp很好的卖家!</span>
+                    </div>
+                    <a href="#"><i class="fa fa-angle-right fa-2x"></i></a>
+                </div>
+            </div>
+            <div class="sale-item">
+                <div class="sale-lister">
+                    <div class="lister-pic">
+                        <div><img src="{% static "img/AL.jpg" %}" alt=""></div>
+                        <div><strong>Al</strong></div>
+                        <p>&nbsp</p>
+                        <span>&nbsp&nbsp每次收货都是非常愉快的。</span>
+                    </div>
+                    <a href="#"><i class="fa fa-angle-right fa-2x"></i></a>
+                </div>
+            </div>
+            <div class="sale-item">
+                <div class="sale-lister">
+                    <div class="lister-pic">
+                        <div><img src="{% static "img/robert.jpg" %}" alt=""></div>
+                        <div><strong>Niro</strong></div>
+                        <p>&nbsp</p>
+                        <span>&nbsp&nbsp 质量好价格实惠。</span>
+                    </div>
+                    <a href="#"><i class="fa fa-angle-right fa-2x"></i></a>
+                </div>
+            </div>
+            <div class="sale-item">
+                <div class="sale-lister">
+                    <div class="lister-pic">
+                        <div><img src="{% static "img/dylan.jpg" %}" alt=""></div>
+                        <div><strong>Bob</strong></div>
+                        <p>&nbsp</p>
+                        <span>&nbsp&nbsp该宝贝真心不错。</span>
+                    </div>
+                    <a href="#"><i class="fa fa-angle-right fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end index-two-banner -->
+
+
+<!--Footer-->
+<footer class="footer">
+    <div class="footer-item">
+        <strong>获得联系</strong>
+        <a href=" "><i class="fa fa-angle-right"></i>获取支持</a>
+        <a href="#"><i class="fa fa-angle-right"></i>广告宣传</a>
+        <a href="#"><i class="fa fa-angle-right"></i>社区服务</a>
+        <a href="#"><i class="fa fa-angle-right"></i>项目研发</a>
+        <a href="#"><i class="fa fa-angle-right"></i>联系我们</a>
+    </div>
+    <div class="footer-item">
+        <strong>遇到问题？</strong>
+        <a href="#"><i class="fa fa-angle-right"></i>帮助</a>
+        <a href="#"><i class="fa fa-angle-right"></i>交流</a>
+        <a href="#"><i class="fa fa-angle-right"></i>现场支持</a>
+    </div>
+    <div class="footer-item">
+        <strong>关注我们</strong>
+        <a href="#"><i class="fa fa-angle-right"></i>Tik Tok</a>
+        <a href="#"><i class="fa fa-angle-right"></i>Bilibili</a>
+        <a href="#"><i class="fa fa-angle-right"></i>Facebook</a>
+        <a href="#"><i class="fa fa-angle-right"></i>Youtube</a>
+        <a href="#"><i class="fa fa-angle-right"></i>Microblog</a>
+    </div>
+    <div class="footer-item">
+        <strong>主要链接</strong>
+        <a href="#"><i class="fa fa-angle-right"></i>主页</a>
+        <a href="#"><i class="fa fa-angle-right"></i>产品</a>
+        <a href="#"><i class="fa fa-angle-right"></i>服务</a>
+        <a href="#"><i class="fa fa-angle-right"></i>关于</a>
+    </div>
+</footer>
+
+<div class="bottom-strip">
+    <div class="copyright"><i class="fa fa-copyright"></i><span>MiTe. All Rights Reserved</span></div>
+</div>
+<!--end Footer-->
+
+<!--scripts-->
+<script src="{% static "vendor/js/jquery-3.2.1.min.js" %}"></script>
+<script src="{% static "vendor/OwlCarousel2-2.2.1/owl.carousel.min.js" %}"></script>
+<script src="{% static "vendor/iconfont.js" %}"></script>
+<script src="{% static "js/hyb.js" %}"></script>
+<!--end scripts-->
+
+</body>
+</html>

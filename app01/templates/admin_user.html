@@ -1,0 +1,386 @@
+{% extends 'admin_layout.html' %}
+{% load static %}
+
+{% block css %}
+    <link href="{% static "css/admin_manage.css" %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid content">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#" style="text-decoration: none">Admin</a></li>
+                <li class="breadcrumb-item active" aria-current="page">User</li>
+            </ol>
+        </nav>
+        <div class="row">
+            <div class="col-lg-9" style="margin-bottom: 24px;">
+                <div class="card" style="min-height: 630px;">
+                    <div class="card-body" style="padding-bottom: 0;min-height: 584.8px;">
+                        <div class="card-title d-flex">
+                            <div class="addable">用户列表</div>
+                            <a type="button" class="add" data-bs-toggle="modal" data-bs-target="#addModal"></a>
+                        </div>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">用户名</th>
+                                <th scope="col">账号</th>
+                                <th scope="col">密码</th>
+                                <th scope="col">创建时间</th>
+                                <th scope="col">操作</th>
+                            </tr>
+                            </thead>
+                            {% for obj in queryset %}
+                                <tbody>
+                                <tr>
+                                    <th scope="row">{{ obj.id }}</th>
+                                    <td>{{ obj.name }}</td>
+                                    <td>{{ obj.account }}</td>
+                                    <td>{{ obj.password }}</td>
+                                    <td>{{ obj.create_time }}</td>
+                                    <td>
+                                        <button uid="{{ obj.id }}" type="button"
+                                                class="btn btn-outline-primary btn-sm btnEdit">编辑
+                                        </button>
+                                        <button uid="{{ obj.id }}" type="button"
+                                                class="btn btn-outline-danger btn-sm btnDelete">
+                                            删除
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="card-footer" style="padding-bottom: 0;">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="d-flex">
+                                    <ul class="pagination">
+                                        {{ page_string }}
+                                    </ul>
+                                    <div style="float: right;">
+                                        <form method="get" style="width: 130px;" class="d-flex">
+                                            <input type="text" class="form-control" name="page" placeholder="页码"
+                                                   aria-label="search">
+                                            <button class="btn btn-outline-success" type="submit"
+                                                    style="white-space: nowrap;">跳转
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <form method="get" class="d-flex" role="search">
+                                    <input class="form-control me-2" type="search" name="search"
+                                           placeholder="Search"
+                                           aria-label="Search">
+                                    <button class="btn btn-outline-success" type="submit"
+                                            style="white-space: nowrap;">
+                                        查询
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">编辑记录</h5>
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">管理员</th>
+                                <th scope="col">操作时间</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>test01</td>
+                                <td>2023-6-23</td>
+                            </tr>
+                            <tr>
+                                <td>test01</td>
+                                <td>2023-6-23</td>
+                            </tr>
+                            <tr>
+                                <td>test01</td>
+                                <td>2023-6-23</td>
+                            </tr>
+                            <tr>
+                                <td>test01</td>
+                                <td>2023-6-23</td>
+                            </tr>
+                            <tr>
+                                <td>test01</td>
+                                <td>2023-6-23</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div style="height: 24px"></div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">敬请期待</h5>
+                        <div id="progress" style="width: 100%;height: 228.5px"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 添加、编辑和删除的模态框 -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="font-weight: bold;">编辑用户</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id = "editForm" method="post" novalidate>
+                    {% csrf_token %}
+
+                    <div class="modal-body">
+                        {% for field in form %}
+                            <div class="input-group mb-4" style="position: relative;">
+                                <span class="input-group-text">{{ field.label }}</span>
+                                {{ field }}
+                                <span class="error-msg"></span>
+                            </div>
+
+
+                        {% endfor %}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button id="btnEdit" type="button" class="btn btn-primary">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="font-weight: bold;">新建用户</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="addForm" method="post" novalidate>
+                    {% csrf_token %}
+
+                    <div class="modal-body">
+                        {% for field in form %}
+                            <div class="input-group mb-4" style="position: relative;">
+                                <span class="input-group-text">{{ field.label }}</span>
+                                {{ field }}
+                                <span class="error-msg"></span>
+                            </div>
+
+
+                        {% endfor %}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button id="btnAdd" type="button" class="btn btn-primary">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteSuccess" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="alert alert-success d-flex" role="alert">
+                <div class="success"></div>
+                删除成功！
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="addSuccess" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="alert alert-success d-flex" role="alert">
+                <div class="success"></div>
+                添加成功！
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editSuccess" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="alert alert-success d-flex" role="alert">
+                <div class="success"></div>
+                编辑成功！
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block js %}
+    <script src="{% static "js/admin_manage.js" %}" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var EditID;
+
+            // 添加成功弹出模态框
+            $(function () {
+                var check = localStorage.getItem("addSuccess");
+                if (check === "true") {
+                    var deleteModal = new bootstrap.Modal(document.getElementById('addSuccess'));
+                    deleteModal.show();
+                    // 清除本地存储中的标志值
+                    localStorage.removeItem("addSuccess");
+                }
+            })
+
+            // 编辑成功弹出模态框
+            $(function () {
+                var check = localStorage.getItem("editSuccess");
+                if (check === "true") {
+                    var deleteModal = new bootstrap.Modal(document.getElementById('editSuccess'));
+                    deleteModal.show();
+                    // 清除本地存储中的标志值
+                    localStorage.removeItem("editSuccess");
+                }
+            })
+
+            // 删除成功弹出模态框
+            $(function () {
+                var check = localStorage.getItem("deleteSuccess");
+                if (check === "true") {
+                    var deleteModal = new bootstrap.Modal(document.getElementById('deleteSuccess'));
+                    deleteModal.show();
+                    // 清除本地存储中的标志值
+                    localStorage.removeItem("deleteSuccess");
+                }
+            })
+
+            //弹出添加模态框时需要清除错误信息
+            $(".add").click(function () {
+                //清除错误信息
+                $(".error-msg").empty();
+            })
+
+
+            $("#btnAdd").click(function () {
+
+                //清除错误信息
+                $(".error-msg").empty();
+
+                //向后台发送请求
+                $.ajax({
+                    url: "/admin/user/add/",
+                    type: "POST",
+                    data: $("#addForm").serialize(),
+                    success: function (res) {
+                        if (res.status) {
+                            //alert("添加成功");
+                            localStorage.setItem("addSuccess", "true");
+                            //清空表单
+                            $("#addForm")[0].reset();
+                            //刷新页面
+                            location.reload();
+                        } else {
+                            $.each(res.error, function (name, errorList) {
+                                $("#addForm").find("#id_" + name).next().text(errorList[0]);
+                            })
+
+                        }
+                    }
+                })
+            })
+            
+            $("#btnEdit").click(function () {
+                //清除错误信息
+                $(".error-msg").empty();
+
+                //向后台发送请求
+                $.ajax({
+                    url: "/admin/user/edit/?uid="+ EditID,
+                    type: "POST",
+                    data: $("#editForm").serialize(),
+                    success: function (res) {
+                        if (res.status) {
+                            //alert("添加成功");
+                            localStorage.setItem("editSuccess", "true");
+                            //清空表单
+                            $("#editForm")[0].reset();
+                            //刷新页面
+                            location.reload();
+                        } else {
+                            $.each(res.error, function (name, errorList) {
+                                $("#editForm").find("#id_" + name).next().text(errorList[0]);
+                            })
+
+                        }
+                    }
+                })
+            })
+
+            $(".btnEdit").click(function () {
+
+                //清除错误信息
+                $(".error-msg").empty();
+
+                var editModal = new bootstrap.Modal(document.getElementById('editModal'));
+
+                EditID = $(this).attr("uid");
+
+                //向后台发送请求
+                $.ajax({
+                    url: "/admin/user/detail/",
+                    type: "GET",
+                    data: {
+                        uid: EditID
+                    },
+                    dataType: "JSON",
+                    success: function (res) {
+                        if (res.status) {
+                            $.each(res.data, function (name, value) {
+                                console.log(name, value);
+                                $("#editForm").find("#id_" + name).val(value);
+                            })
+                            editModal.show();
+                        } else {
+                            location.alert(res.error);
+                        }
+                    }
+                })
+
+            })
+
+            $(".btnDelete").click(function () {
+
+                var uid = $(this).attr("uid");
+                //向后台发送请求
+                $.ajax({
+                    url: "/admin/user/delete/",
+                    type: "GET",
+                    data: {
+                        uid: uid
+                    },
+                    success: function (res) {
+                        //刷新页面
+                        if (res.status) {
+                            localStorage.setItem("deleteSuccess", "true");
+                            location.reload();
+                        } else {
+                            location.alert(res.error);
+                        }
+                    }
+                })
+            })
+        })
+
+
+    </script>
+
+{% endblock %}

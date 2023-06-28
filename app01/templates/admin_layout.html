@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MiTe Admin</title>
+
+    <!--import Bootstrap5-->
+    <link href="{% static "plugins/bootstrap-5.3.0/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "css/admin_layout.css" %}" rel="stylesheet" type="text/css">
+    {% block css %}{% endblock %}
+
+
+</head>
+<body>
+<div style="display: flex;width: 100%">
+    <div class="side-container">
+        <div class="sidebar">
+            <div class="logo">MiTe Admin</div>
+            <div class="user">
+                <div style="height: 25px;"></div>
+                <div class="row">
+                    <div class="col" style="margin-left: 30px;">
+                        <div class="admin-head"></div>
+                    </div>
+                    <div class="col">
+                        <div style="font-size: 20px; position:relative;left: -20px;top:5px;">Hello,admin!</div>
+                        <div style="height: 10px;"></div>
+                        <div style="font-size: 15px;position:relative;left: -15px;">name: test01</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ele">
+                <a type="button" href="/admin/home/">主页</a>
+                <a type="button" href="/admin/sales/">订单</a>
+                <a type="button" href="/admin/user/">用户</a>
+                <a type="button" style="text-indent: 84px;" href="/admin/self/">管理员</a>
+                <a type="button" href="https://github.com/NKUmianman/MiTe">外链</a>
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas侧边栏内容 -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasSidebar"
+         aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasLabel">MiTe Admin</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                    style="font-size: 20px;margin-bottom: 3px;"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="user">
+                <div style="height: 25px;"></div>
+                <div class="row">
+                    <div class="col" style="margin-left: 30px;">
+                        <div class="admin-head"></div>
+                    </div>
+                    <div class="col">
+                        <div style="font-size: 20px; position:relative;left: -20px;top:2px;">Hello,admin!</div>
+                        <div style="height: 10px;"></div>
+                        <div style="font-size: 15px;position:relative;left: -15px;">name: test01</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ele">
+                <a type="button" href="/admin/home/" style="text-indent: 110px">主页</a>
+                <a type="button" href="/admin/sales/" style="text-indent: 110px">订单</a>
+                <a type="button" href="/admin/user/" style="text-indent: 110px">用户</a>
+                <a type="button" href="/admin/self/" style="text-indent: 103px">管理员</a>
+                <a type="button" href="https://github.com/NKUmianman/MiTe" style="text-indent: 110px">外链</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="main-container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+
+                <a class="toggle" href="#offcanvasSidebar" role="button"
+                   aria-controls="offcanvasSidebar"></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <a type="button" class="nav-link wifi"></a>
+                        <a type="button" class="nav-link refresh" href=""></a>
+                    </div>
+                    <form class="d-flex">
+                        <a type="button" class="nav-link logout" href="/admin/logout/"></a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        {% block content %}{% endblock %}
+    </div>
+
+</div>
+</body>
+<script src="{% static "plugins/bootstrap-5.3.0/js/bootstrap.bundle.js" %}" type="text/javascript"></script>
+<script src="{% static "js/jquery-3.7.0.min.js" %}" type="text/javascript"></script>
+<script src="{% static "js/echarts.min.js" %}" type="text/javascript"></script>
+<script src="{% static "js/vintage.js" %}" type="text/javascript"></script>
+{% block js %}{% endblock %}
+</html>
